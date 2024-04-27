@@ -12,6 +12,10 @@ const Stars = ({ count, defaultRating, icon, color, iconSize }) => {
 
   let stars = Array(count || DEFAULT_COUNT).fill(icon);
 
+  const handleClick = (rating) => {
+    setRating(rating);
+  };
+
   return (
     <div className='stars-container'>
       {stars.map((item, index) => {
@@ -26,6 +30,7 @@ const Stars = ({ count, defaultRating, icon, color, iconSize }) => {
         } else {
           itemColor = DEFAULT_UNSELECTED_COLOR;
         }
+
         return (
           <div
             className='star'
@@ -37,6 +42,7 @@ const Stars = ({ count, defaultRating, icon, color, iconSize }) => {
             }}
             onMouseEnter={() => setTemporaryRating(index + 1)}
             onMouseLeave={() => setTemporaryRating(0)}
+            onClick={() => handleClick(index + 1)}
           >
             {icon ? icon : DEFAULT_ICON}
           </div>
