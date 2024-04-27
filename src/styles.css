@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,4 +11,94 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #111;
+  color: #fdfdfd;
+}
+
+#root {
+  max-width: 1440px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.stars-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 0.025em;
+  width: 100%;
+  max-width: 1440px;
+  flex-wrap: wrap;
+}
+
+.star {
+  cursor: pointer;
+  transition: all 150ms linear;
+}
+
+.star:hover {
+  transform: scale(1.1);
+}
+
+.options-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.options-form label {
+  vertical-align: middle;
+  width: 100%;
+  font-size: 1.5em;
+  line-height: 2em;
+  font-weight: 300;
+  padding: 0.5em 1em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.options-form input {
+  width: fit-content;
+  display: list-item;
+  text-align: center;
+  margin: 0 auto;
+  height: 30px;
+}
+
+.options-form input[type="text"] {
+  padding: 0.015em;
+  text-align: center;
+  width: fit-content;
+  font-size: 0.9em;
+}
+
+.options-form input[type="color"] {
+  width: 25px;
+}
+
+.button-reset {
+  align-content: center;
+  margin: 0 auto;
+  padding: 0.25em;
+}
+
+button {
+  cursor: pointer;
+  vertical-align: middle;
+  margin: 0 auto;
+  background-color: transparent;
+  color: #fdfdfd;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  border: 1px solid #fdfdfd;
+  transition: all 150ms linear;
+}
+
+button:hover {
+  opacity: 0.9;
+  scale: 0.9;
 }
