@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const DEFAULT_COUNT = 5;
 // ★☆
@@ -10,11 +10,30 @@ const Stars = ({ count, defaultRating, icon, color, iconSize }) => {
   const [rating, setRating] = useState(defaultRating);
   const [temporaryRating, setTemporaryRating] = useState(0);
 
+  useEffect(() => {
+    const storedRating = localStorage.getItem("starRating");
+    if (storedRating) {
+      setRating(parseInt(storedRating));
+    } else {
+      setRating(defaultRating);
+    }
+  }, [defaultRating]);
+
   let stars = Array(count || DEFAULT_COUNT).fill(icon);
 
   const handleClick = (rating) => {
     setRating(rating);
+    saveRatingLocal(rating);
+  };
+
+  const saveRatingLocal = (rating) => {
     localStorage.setItem("starRating", rating);
+  };
+
+  const resetRatingLocal = () => {
+    localStorage.setItem("starRating", 0);
+    localStorage.removeItem("starRating");
+    setRating(0);
   };
 
   return (
@@ -49,6 +68,9 @@ const Stars = ({ count, defaultRating, icon, color, iconSize }) => {
           </div>
         );
       })}
+      <div>
+        <button onClick={() => resetRatingLocal()}>RESET</button>
+      </div>
     </div>
   );
 };
