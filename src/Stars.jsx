@@ -14,6 +14,7 @@ const Stars = ({ count, defaultRating, icon, color, iconSize }) => {
 
   const handleClick = (rating) => {
     setRating(rating);
+    localStorage.setItem("starRating", rating);
   };
 
   return (
