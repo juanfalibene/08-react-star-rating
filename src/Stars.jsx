@@ -33,7 +33,10 @@ const Stars = ({ count, defaultRating, icon, color, iconSize }) => {
             style={{
               fontSize: iconSize ? `${iconSize}px` : "1em",
               color: itemColor,
+              filter: `${isActiveColor ? "grayscale(0%)" : "grayscale(100%)"}`,
             }}
+            onMouseEnter={() => setTemporaryRating(index + 1)}
+            onMouseLeave={() => setTemporaryRating(0)}
           >
             {icon ? icon : DEFAULT_ICON}
           </div>
