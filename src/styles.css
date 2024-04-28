@@ -22,6 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 2em;
   align-items: center;
   text-align: center;
 }
@@ -110,4 +111,33 @@ button:hover {
   opacity: 0.9;
   scale: 0.9;
   transform: rotate(90deg);
+}
+
+.credits {
+  margin-top: 5em;
+}
+
+.credits,
+.credits a {
+  font-size: 0.875em;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  color: #fdfdfd5d;
+  transition: all 150ms ease-in-out;
+}
+
+.credits a:hover {
+  color: #fdfdfd;
+  font-size: 0.9em;
+}
+
+@media screen and (max-width: 786px) {
+  #root,
+  .stars-container {
+    max-width: 599px;
+    height: auto;
+  }
+  .options-form {
+    flex-direction: column;
+  }
 }
