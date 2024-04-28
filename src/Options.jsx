@@ -11,19 +11,36 @@ const Options = ({
   onCountChange,
 }) => {
   return (
-    <form>
+    <form className='options-form'>
       <label>
-        Icon:
-        <input
-          type='text'
-          value={icon}
-          maxLength='1'
-          size='2'
-          onChange={onIconChange}
-        />
+        Icon
+        <select onChange={onIconChange}>
+          <option value={icon} selected>
+            {icon}
+          </option>
+          <option value='❤'>❤</option>
+          <option value='♡'>♡</option>
+          <option value='☃'>☃</option>
+          <option value='✌'>✌</option>
+          <option value='⚡'>⚡</option>
+          <option value='🌟'>🌟</option>
+          <option value='🌝'>🌝</option>
+          <option value='🌚'>🌚</option>
+          <option value='✨'>✨</option>
+          <option value='🌠'>🌠</option>
+          <option value='♥'>♥</option>
+          <option value='☄'>☄</option>
+          <option value='☁'>☁</option>
+          <option value='ツ'>ツ</option>
+          <option value='🌹'>🌹</option>
+          <option value='🐖'>🐖</option>
+          <option value='🍸'>🍸</option>
+          <option value='✰'>✰</option>
+          <option value='☠'>☠</option>
+        </select>
       </label>
       <label>
-        Icon Size:
+        Icon Size
         <input
           type='range'
           value={iconSize}
@@ -34,7 +51,7 @@ const Options = ({
         />
       </label>
       <label>
-        Count:
+        Count
         <input
           type='range'
           value={count}
@@ -45,7 +62,7 @@ const Options = ({
         />
       </label>
       <label>
-        Color:
+        Color
         <input type='color' value={color} onChange={onColorChange} />
       </label>
     </form>
