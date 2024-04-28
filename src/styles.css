@@ -20,6 +20,7 @@ body {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -27,7 +28,7 @@ body {
 
 .stars-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 0.025em;
   width: 100%;
   max-width: 1440px;
@@ -61,29 +62,36 @@ body {
   text-align: center;
 }
 
-.options-form input {
+.options-form input,
+.options-form select {
   width: fit-content;
+  height: auto;
   display: list-item;
   text-align: center;
   margin: 0 auto;
-  height: 30px;
+  background-color: transparent;
 }
 
-.options-form input[type="text"] {
+.options-form select {
   padding: 0.015em;
   text-align: center;
   width: fit-content;
-  font-size: 0.9em;
+  color: #fdfdfd;
+  font-size: 1.25em;
+  border: none;
+  border-radius: 4px;
 }
 
 .options-form input[type="color"] {
   width: 25px;
+  height: 30px;
 }
 
 .button-reset {
-  align-content: center;
+  display: contents;
   margin: 0 auto;
   padding: 0.25em;
+  height: 100%;
 }
 
 button {
@@ -91,14 +99,15 @@ button {
   vertical-align: middle;
   margin: 0 auto;
   background-color: transparent;
+  font-size: 2em;
   color: #fdfdfd;
+  border: none;
   padding: 0.25em 0.5em;
-  border-radius: 4px;
-  border: 1px solid #fdfdfd;
   transition: all 150ms linear;
 }
 
 button:hover {
   opacity: 0.9;
   scale: 0.9;
+  transform: rotate(90deg);
 }
